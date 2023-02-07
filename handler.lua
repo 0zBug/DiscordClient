@@ -3,7 +3,19 @@ local Prefix = ...
 local Client = loadstring(game:HttpGet("https://raw.github.com/0zBug/DiscordClient/main/client.lua"))()
 
 local Descriptions = {}
-local Commands = {}
+local Commands = {
+    ["help"] = function(Message, Args)
+        local Data = "```r\n"
+
+        for _, v in next, Descriptions do
+            Data = Data .. string.format("%s - %s\n", v.Name, v.Description)
+        end
+
+        Data = Data .. "```"
+
+        Message.channel:Send(Data)
+    end
+}
 
 local function AddCommand(Name, Description, Callback)
     Commands[Name] = Callback

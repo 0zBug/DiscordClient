@@ -17,7 +17,7 @@ local Commands = {
     end
 }
 
-local function AddCommand(Name, Description, Callback)
+function Client:AddCommand(Name, Description, Callback)
     Commands[Name] = Callback
 
     table.insert(Descriptions, {
@@ -47,4 +47,4 @@ Client:Connect("Message", function(Message)
     end
 end)
 
-return Client, AddCommand
+return Client

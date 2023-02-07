@@ -20,7 +20,7 @@
 ```
 ## handler.lua
 ### AddCommand
-**Adds a command to your selfbot**
+**Adds a command to your bot**
 ```html
 <void> Client:AddCommand(<string> Name, <string> Description, <function> Callback)
 ```
